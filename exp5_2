@@ -1,0 +1,18 @@
+mysql> create table customer(customer_id int primary key,name varchar(50),city varchar(50),credits int);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> insert into customer values(1,'Mishal','valamboor',3500),(2,'Rinshad','Manjeri',4000),(3,'Fidha A.K','Alanallur',4500);
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> source /home/mca/ADBMS/sql_lab/exp5_2_procedure;
+Query OK, 0 rows affected, 3 warnings (0.01 sec)
+
+mysql> call get_customer('Mishal');
++-------------+--------+-----------+---------+
+| customer_id | name   | city      | credits |
++-------------+--------+-----------+---------+
+|           1 | Mishal | valamboor |    3500 |
++-------------+--------+-----------+---------+
+1 row in set (0.00 sec)
+
