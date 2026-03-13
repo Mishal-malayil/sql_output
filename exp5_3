@@ -1,0 +1,38 @@
+mysql> use exp5_db;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
+mysql> source /home/mca/ADBMS/sql_lab/exp5_3_procedure;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> call membership_status(2,@m);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select @m;
++------+
+| @m   |
++------+
+| gold |
++------+
+mysql> call membership_status(3,@m);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select @m;
++------+
+| @m   |
++------+
+| gold |
++------+
+1 row in set (0.00 sec)
+
+mysql> call membership_status(1,@m);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select @m;
++------+
+| @m   |
++------+
+| gold |
++------+
