@@ -1,0 +1,20 @@
+ create table emp_salary( emp_id int, emp_name varchar(50),no_of_working_days int,designation varchar(50),salary decimal(10,2));
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> insert into emp_salary values (1,'Akhil',20,'Assistant Professor',0),
+    -> (2,'Rahul',25,'Clerk',0),
+    -> (3,'Neha',22,'Programmer',0);
+Query OK, 3 rows affected (0.01 sec)
+mysql> source /home/mca/ADBMS/sql_lab/exp5_5_procedure;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> call calculate_salary();
+Query OK, 0 rows affected (0.01 sec)
+mysql> select * from Emp_salary;
++--------+----------+--------------------+---------------------+----------+
+| emp_id | emp_name | no_of_working_days | designation         | salary   |
++--------+----------+--------------------+---------------------+----------+
+|      1 | Akhil    |                 20 | Assistant Professor | 35000.00 |
+|      2 | Rahul    |                 25 | Clerk               | 18750.00 |
+|      3 | Neha     |                 22 | Programmer          | 27500.00 |
++--------+----------+--------------------+---------------------+----------+
