@@ -1,0 +1,24 @@
+mysql> CREATE TABLE Employee (emp_id INT PRIMARY KEY,name VARCHAR(50),salary DECIMAL(10,2),department VARCHAR(50));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> CREATE TABLE Emp_history (emp_id INT,name VARCHAR(50),salary DECIMAL(10,2),department VARCHAR(50),Date_of_deletion DATETIME);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> INSERT INTO Employee VALUES (1, 'Asha', 25000, 'HR'),(2, 'Rahul', 30000, 'IT'),(3, 'Meena', 28000, 'Finance');
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> source /home/mca/ADBMS/sql_lab/exp5_7_trigger;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> delete from Employee where emp_id='2';
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from Emp_history;
++--------+-------+----------+------------+---------------------+
+| emp_id | name  | salary   | department | Date_of_deletion    |
++--------+-------+----------+------------+---------------------+
+|      2 | Rahul | 30000.00 | IT         | 2026-03-24 15:04:39 |
++--------+-------+----------+------------+---------------------+
+1 row in set (0.00 sec)
+
